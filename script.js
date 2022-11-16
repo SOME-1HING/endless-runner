@@ -14,7 +14,7 @@ const deathScreenElem = document.querySelector("[data-death-screen]");
 
 setPixelToWorldScale();
 window.addEventListener("resize", setPixelToWorldScale);
-document.addEventListener("keydown", handleStart, { once: true });
+document.addEventListener("click", handleStart, { once: true });
 
 let lastTime;
 let speedScale;
@@ -83,7 +83,7 @@ function handleLose() {
   setDinoLose();
   audioElem.pause();
   setTimeout(() => {
-    document.addEventListener("keydown", handleStart, { once: true });
+    document.addEventListener("click", handleStart, { once: true });
     reset(deathScreenElem);
     deathScreenElem.classList.remove("hide");
     audioElem.src = "Audio/ds_death_sound.mp3";
